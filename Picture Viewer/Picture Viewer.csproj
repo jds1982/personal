@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OptionsForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OptionsForms.Designer.cs">
+      <DependentUpon>OptionsForms.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -52,6 +58,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="OptionsForms.resx">
+      <DependentUpon>OptionsForms.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewerForm.resx">
       <DependentUpon>ViewerForm.cs</DependentUpon>
     </EmbeddedResource>

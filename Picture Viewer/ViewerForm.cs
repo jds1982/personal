@@ -74,6 +74,31 @@ namespace Picture_Viewer
 
         }
 
+        private void picShowPicture_MouseMove(object sender, MouseEventArgs e)
+        {
+            lblX.Text = "X: " + e.X.ToString();
+            lblY.Text = "Y: " + e.Y.ToString();
+
+        }
+
+        private void picShowPicture_MouseLeave(object sender, EventArgs e)
+        {
+            lblX.Text = "";
+            lblY.Text = "";
+        }
+
+        private void ViewerForm_Load(object sender, EventArgs e)
+        {
+            lblX.Text = "";
+            lblY.Text = "";
+        }
+
+        private void btnOptions_Click(object sender, EventArgs e)
+        {
+            OptionsForms frmOptionsDialog = new OptionsForms();
+            frmOptionsDialog.ShowDialog();
+        }
+
 
     }
 }

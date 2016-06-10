@@ -35,11 +35,15 @@
             this.btnEnlarge = new System.Windows.Forms.Button();
             this.btnShrink = new System.Windows.Forms.Button();
             this.btnDrawBorder = new System.Windows.Forms.Button();
+            this.lblX = new System.Windows.Forms.Label();
+            this.lblY = new System.Windows.Forms.Label();
+            this.btnOptions = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picShowPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSelectPicture
             // 
+            this.btnSelectPicture.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSelectPicture.Location = new System.Drawing.Point(295, 10);
             this.btnSelectPicture.Name = "btnSelectPicture";
             this.btnSelectPicture.Size = new System.Drawing.Size(85, 23);
@@ -50,6 +54,7 @@
             // 
             // btnQuit
             // 
+            this.btnQuit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnQuit.Location = new System.Drawing.Point(295, 40);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(85, 23);
@@ -60,6 +65,9 @@
             // 
             // picShowPicture
             // 
+            this.picShowPicture.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.picShowPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picShowPicture.Location = new System.Drawing.Point(8, 8);
             this.picShowPicture.Name = "picShowPicture";
@@ -67,6 +75,8 @@
             this.picShowPicture.TabIndex = 2;
             this.picShowPicture.TabStop = false;
             this.picShowPicture.Click += new System.EventHandler(this.picShowPicture_Click);
+            this.picShowPicture.MouseLeave += new System.EventHandler(this.picShowPicture_MouseLeave);
+            this.picShowPicture.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picShowPicture_MouseMove);
             // 
             // ofdSelectPicture
             // 
@@ -76,6 +86,7 @@
             // 
             // btnEnlarge
             // 
+            this.btnEnlarge.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEnlarge.Location = new System.Drawing.Point(338, 261);
             this.btnEnlarge.Name = "btnEnlarge";
             this.btnEnlarge.Size = new System.Drawing.Size(21, 23);
@@ -86,6 +97,7 @@
             // 
             // btnShrink
             // 
+            this.btnShrink.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnShrink.Location = new System.Drawing.Point(365, 261);
             this.btnShrink.Name = "btnShrink";
             this.btnShrink.Size = new System.Drawing.Size(21, 23);
@@ -96,6 +108,7 @@
             // 
             // btnDrawBorder
             // 
+            this.btnDrawBorder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDrawBorder.Location = new System.Drawing.Point(295, 69);
             this.btnDrawBorder.Name = "btnDrawBorder";
             this.btnDrawBorder.Size = new System.Drawing.Size(85, 23);
@@ -104,11 +117,45 @@
             this.btnDrawBorder.UseVisualStyleBackColor = true;
             this.btnDrawBorder.Click += new System.EventHandler(this.btnDrawBorder_Click);
             // 
+            // lblX
+            // 
+            this.lblX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblX.AutoSize = true;
+            this.lblX.Location = new System.Drawing.Point(300, 110);
+            this.lblX.Name = "lblX";
+            this.lblX.Size = new System.Drawing.Size(17, 13);
+            this.lblX.TabIndex = 6;
+            this.lblX.Text = "X:";
+            // 
+            // lblY
+            // 
+            this.lblY.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblY.AutoSize = true;
+            this.lblY.Location = new System.Drawing.Point(300, 125);
+            this.lblY.Name = "lblY";
+            this.lblY.Size = new System.Drawing.Size(17, 13);
+            this.lblY.TabIndex = 7;
+            this.lblY.Text = "Y:";
+            // 
+            // btnOptions
+            // 
+            this.btnOptions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOptions.Location = new System.Drawing.Point(295, 155);
+            this.btnOptions.Name = "btnOptions";
+            this.btnOptions.Size = new System.Drawing.Size(85, 23);
+            this.btnOptions.TabIndex = 8;
+            this.btnOptions.Text = "Options";
+            this.btnOptions.UseVisualStyleBackColor = true;
+            this.btnOptions.Click += new System.EventHandler(this.btnOptions_Click);
+            // 
             // ViewerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 287);
+            this.Controls.Add(this.btnOptions);
+            this.Controls.Add(this.lblY);
+            this.Controls.Add(this.lblX);
             this.Controls.Add(this.btnDrawBorder);
             this.Controls.Add(this.btnShrink);
             this.Controls.Add(this.btnEnlarge);
@@ -117,8 +164,10 @@
             this.Controls.Add(this.btnSelectPicture);
             this.Name = "ViewerForm";
             this.Text = "Picture Viewer";
+            this.Load += new System.EventHandler(this.ViewerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picShowPicture)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -131,6 +180,9 @@
         private System.Windows.Forms.Button btnEnlarge;
         private System.Windows.Forms.Button btnShrink;
         private System.Windows.Forms.Button btnDrawBorder;
+        private System.Windows.Forms.Label lblX;
+        private System.Windows.Forms.Label lblY;
+        private System.Windows.Forms.Button btnOptions;
     }
 }
 

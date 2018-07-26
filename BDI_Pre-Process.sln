@@ -6,6 +6,15 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDI_Pre-Process", "BDI_Pre-Process\BDI_Pre-Process.csproj", "{411F897E-94CB-41CB-B95D-4577BB79CDC0}"
 EndProject
 Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.idmi.com:8443/tfs/sql2014collection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = BDI_Pre-Process\\BDI_Pre-Process.csproj
+		SccProjectName1 = BDI_Pre-Process
+		SccLocalPath1 = BDI_Pre-Process
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />
+    </startup>
+<appSettings>
+  <add key="configFile" value="
+ &lt;bdi>
+	&lt;!--
+	Client - The mission code
+  	AppealCode - The segment code minus last two characters
+	Description - description for the current run
+	MailDate - Date when this is suppose to ship, format: MM/DD/YYYY
+	-->
+	&lt;mission client=&quot;{0}&quot; appealCode=&quot;{1}&quot; description=&quot;{2}&quot; mailDate=&quot;{3}&quot; />
+	&lt;rfm>
+		&lt;!--
+		Options for type
+			Normal - Regular RFM mission with RFM grid
+			NonRFM - RFM grid is not created
+			DateLimited - RFM limited by specific date range values.  
+							The dateBegin and dateEnd fields should be populated for this selection.
+							Date format should be: MM/DD/YYYY
+		-->
+		&lt;rfmType type=&quot;Normal&quot; dateBegin=&quot;&quot; dateEnd=&quot;&quot; />
+	&lt;/rfm>
+	&lt;!--
+	If the name parts should be cleansed
+		1 = True
+		0 = False
+	-->
+	&lt;nameCleanse run=&quot;{4}&quot; />
+	
+	&lt;!--
+	If Stylelist should be run on the file
+		1 = True
+		0 = False
+	-->
+	&lt;runStyleist run=&quot;{5}&quot; />	
+	
+	&lt;!--
+	If a household dedupe should be run on file
+		1 = True
+		0 = False
+	-->
+	&lt;runHouseholdDedupe run=&quot;{6}&quot; />	
+
+	&lt;!--
+		The file name including extension for the offload file
+		that includes the account names and possibly activities
+	-->	
+	&lt;dataFile fileName=&quot;{7}&quot; />
+	
+	&lt;!--
+		The file name including extension for the offload file
+		containing activity records for donors
+		
+		You can leave the fileName=&quot;&quot; if there is no activity file provided.
+	-->		
+	&lt;activityFile fileName=&quot;{8}&quot; />	
+	
+	&lt;!--
+		The file name including extension for the offload suppression file
+		
+		You can leave the fileName=&quot;&quot; if there is no suppression file provided.
+	-->	
+	&lt;suppression fileName=&quot;{9}&quot; />	
+	
+	&lt;!--
+		The file name including extension for the eligible file
+	-->		
+	&lt;eligible fileName=&quot;{10}&quot; />
+	
+	&lt;!--
+		In the Segments section you can define 0 or many rows depending on information the client is offloading
+		segmentCode should be unique compared to other segmentCode's
+		segmentName should be unique compared to other segmentName's
+		The priority should go from 1-N with no overlaps, this is used in selection so make sure you want priority 1 items pulled first then 2 etc
+	-->		
+	&lt;segments>
+{11}
+	&lt;/segments>
+	
+	&lt;!--
+		The packages that will be created with the appeal
+		code should be unique compared to other code's
+		Only one package can be set with isControl=1
+	-->		
+	&lt;packages>
+		&lt;package code=&quot;{1}&quot; Description=&quot;Control&quot; deliveryDate=&quot;{3}&quot; isControl=&quot;1&quot; PackageCost=&quot;{12}&quot; PostageCost=&quot;{13}&quot; InHomeDate=&quot;{3}&quot; />
+			
+	&lt;/packages>
+	
+				
+&lt;/bdi>"/>
+</appSettings>
+</configuration>
